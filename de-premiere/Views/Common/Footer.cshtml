@@ -1,0 +1,181 @@
+﻿@model FooterModel
+@using Nop.Core
+@using Nop.Core.Domain.Tax
+@using Nop.Core.Infrastructure
+@using Nop.Web.Models.Common;
+
+
+
+
+
+
+
+
+<footer data-section-name="footer">
+
+  <div class="container-fluid cf-padding">
+    <hr />
+    @* desktop *@
+    <div class="row hidden-xs hidden-sm d-none d-md-block">
+      <div class="col-12 col-xs-2 col-sm-2 col-md-2">
+        
+        <ul class="list-unstyled lnk-footer">
+          <li style="margin-bottom: 15px;"><a href="#">INFO</a></li>
+          <li><a href="/customer/myaccount">MY ACCOUNT</a></li>
+          <li><a href="/Order/ConfirmPayment">PAYMENT CONFIRMATION</a></li>
+           @foreach (var topic in Model.Topics.Where(x => x.IncludeInFooterColumn1).ToList())
+          {
+              <li><a href="@Url.RouteUrl("Topic", new { SeName = topic.SeName })">@topic.Name.ToUpper()</a></li>
+          }
+          @* <li><a href="/Order/ShipmentDetails">SHIPPING INFORMATION</a></li>
+          <li><a href="@Url.RouteUrl("Topic", new {SeName = Html.GetTopicSeName("returnpolicy") })">RETURN POLICY</a> </li>
+          <li><a href="@Url.RouteUrl("Topic", new {SeName = Html.GetTopicSeName("conditionsofuse") })">CONDITION OF USE</a></li>
+          <li><a href="@Url.RouteUrl("ContactUs")">CONTACT CUSTOMER CARE</a></li> *@
+        </ul>
+
+      </div>
+
+      <div class="col-12 col-xs-2 col-sm-2 col-md-2">
+
+        <ul class="list-unstyled lnk-footer">
+          <li style="margin-bottom: 15px;"><a href="#">CONTACT US</a></li>
+          @foreach (var topic in Model.Topics.Where(x => x.IncludeInFooterColumn2).ToList())
+          {
+            <li><a href="@Url.RouteUrl("Topic", new { SeName = topic.SeName })">@topic.Name.ToUpper()</a></li>
+          }
+          @* <li><a href="@Url.RouteUrl("Topic", new {SeName = Html.GetTopicSeName("about") })">ABOUT</a> </li>
+          <li><a href="@Url.RouteUrl("Topic", new {SeName = Html.GetTopicSeName("faq") })">FAQ</a> </li>
+          <li><a href="@Url.RouteUrl("ContactUs")">CONTACT</a></li>
+          <li><a href="@Url.RouteUrl("Topic", new {SeName = Html.GetTopicSeName("stockist") })">STOCKIST</a> </li> *@
+        </ul>
+
+        
+      </div>
+     
+      <div class="col-12 col-xs-2 col-sm-2 col-md-2" style="margin-bottom: 10%;">
+        <ul class="list-unstyled lnk-footer">
+          <li style="margin-bottom: 15px;"><a href="#">SOCIAL</a></li>
+          @* @foreach (var topic in Model.Topics.Where(x => x.IncludeInFooterColumn3).ToList())
+          {
+            <li><a href="@Url.RouteUrl("Topic", new { SeName = topic.SeName })">@topic.Name.ToUpper()</a></li>
+          } *@
+          <li><a href="https://www.instagram.com/shopatvelvet">INSTAGRAM</a></li>
+          @* <li><a href="#">WHATSAPP</a> </li> *@
+          <li><a href="https://shopee.co.id/shopatvelvet">SHOPEE</a></li>
+          <li><a href="https://www.lazada.co.id/shop-at-velvet-121159058/">LAZADA</a> </li>
+        </ul>
+      </div>
+
+      
+      <div class="col-12 col-xs-2 col-sm-2 col-md-2">
+        <div id="nieuwsbrief" style="margin-top: 0;">
+          <span class="hidden-xs">NEWSLETTER</span>
+          <form id="mc-embedded-subscribe-form" class="form-inline validate" target="_blank" name="mc-embedded-subscribe-form" method="post" action="">
+            <div class="form-group" style="vertical-align:top;">
+                <input id="mce-EMAIL" class="email" type="email" style="" placeholder="ENTER YOUR EMAIL HERE" name="EMAIL" value="" required="required" /><input id="mc-embedded-subscribe" type="submit" style="" name="subscribe" value="" />
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-4 col-md-4 d-block d-md-none hidden-md hidden-lg" style="margin-top: 10%;">
+        <div class="copy">
+          <img style="width: 30%; " src="~/Themes/v1/Content/images/logo_footer.png" />
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-4 col-md-4 d-none d-md-block hidden-xs hidden-sm">
+        <div class="copy" style="display: flex; justify-content: flex-end;">
+          <img style="width: 30%; " src="~/Themes/v1/Content/images/logo_footer.png" />
+        </div>
+      </div>
+    </div>
+
+    @* mobile *@
+    <div class="hidden-md hidden-lg d-block d-md-none">
+      <div class="row" style="margin: 0;">
+        
+        <ul class="list-unstyled lnk-footer">
+          <li><a href="#">INFO</a></li>
+          <li><a href="/customer/myaccount">MY ACCOUNT</a></li>
+          <li><a href="/Order/ConfirmPayment">PAYMENT CONFIRMATION</a></li>
+           @foreach (var topic in Model.Topics.Where(x => x.IncludeInFooterColumn1).ToList())
+          {
+              <li><a href="@Url.RouteUrl("Topic", new { SeName = topic.SeName })">@topic.Name.ToUpper()</a></li>
+          }
+          @* <li><a href="/Order/ShipmentDetails">SHIPPING INFORMATION</a></li> *@
+          @* <li><a href="@Url.RouteUrl("Topic", new {SeName = Html.GetTopicSeName("returnpolicy") })">RETURN POLICY</a> </li> *@
+          @* <li><a href="@Url.RouteUrl("Topic", new {SeName = Html.GetTopicSeName("conditionsofuse") })">CONDITION OF USE</a></li> *@
+          @* <li><a href="@Url.RouteUrl("ContactUs")">CONTACT CUSTOMER CARE</a></li> *@
+        </ul>
+
+      </div>
+
+      <div class="row" style="margin: 0;">
+
+        <ul class="list-unstyled lnk-footer">
+          <li><a href="#">CONTACT US</a></li>
+          @foreach (var topic in Model.Topics.Where(x => x.IncludeInFooterColumn2).ToList())
+          {
+            <li><a href="@Url.RouteUrl("Topic", new { SeName = topic.SeName })">@topic.Name.ToUpper()</a></li>
+          }
+          @* <li><a href="@Url.RouteUrl("Topic", new {SeName = Html.GetTopicSeName("about") })">ABOUT</a> </li>
+          <li><a href="@Url.RouteUrl("Topic", new {SeName = Html.GetTopicSeName("faq") })">FAQ</a> </li>
+          <li><a href="@Url.RouteUrl("ContactUs")">CONTACT</a></li>
+          <li><a href="@Url.RouteUrl("Topic", new {SeName = Html.GetTopicSeName("stockist") })">STOCKIST</a> </li> *@
+        </ul>
+
+        
+      </div>
+     
+      <div class="row" style="margin: 0;">
+        <ul class="list-unstyled lnk-footer">
+          <li><a href="#">SOCIAL</a></li>
+          @* @foreach (var topic in Model.Topics.Where(x => x.IncludeInFooterColumn3).ToList())
+          {
+            <li><a href="@Url.RouteUrl("Topic", new { SeName = topic.SeName })">@topic.Name.ToUpper()</a></li>
+          } *@
+          <li><a href="https://www.instagram.com/shopatvelvet">INSTAGRAM</a></li>
+          @* <li><a href="#">WHATSAPP</a> </li> *@
+          <li><a href="https://shopee.co.id/shopatvelvet">SHOPEE</a></li>
+          <li><a href="https://www.lazada.co.id/shop-at-velvet-121159058/">LAZADA</a> </li>
+        </ul>
+      </div>
+
+      
+      <div class="row" style="margin: 0; margin-top: 8%;">
+        <div id="nieuwsbrief" style="margin-top: 0;">
+          <span class="hidden-xs">NEWSLETTER</span>
+          <form id="mc-embedded-subscribe-form" class="form-inline validate" target="_blank" name="mc-embedded-subscribe-form" method="post" action="">
+            <div class="form-group" style="vertical-align:top;">
+                <input id="mce-EMAIL" class="email" type="email" style="" placeholder="ENTER YOUR EMAIL HERE" name="EMAIL" value="" required="required" /><input id="mc-embedded-subscribe" type="submit" style="" name="subscribe" value="" />
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="row" style="margin: 0; margin-top: 8%;">
+        <div class="copy">
+          <img style="width: 18%; " src="~/Themes/v1/Content/images/logo_footer.png" />
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="row" style="margin-top: 5%;">
+      <div class="col-12 col-md-12" style="display: flex; justify-content: flex-start;">
+        <p style="color: lightgray;"> &#9400; <script>document.write(new Date().getFullYear())</script>. DE PREMIÉRÉ NÉCESSITÉ</a></p>
+      </div>
+    </div>
+  
+  </div>
+</footer>
+@* <span id="siteby">site by: flitts</span> *@
+@* <li class="hidden-xs" style="color:transparent;">site by: <a href="http://www.flitts.com/" target="_blank" style="color:transparent;">flitts</a></li> *@
+
+<script>
+	console.log(`FOOTER`);
+	var model = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model));
+	console.log(model);    
+</script>
