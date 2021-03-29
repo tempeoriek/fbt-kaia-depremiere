@@ -1,0 +1,146 @@
+﻿@model FooterModel
+@using Nop.Core
+@using Nop.Core.Domain.Tax
+@using Nop.Core.Infrastructure
+@using Nop.Web.Models.Common;
+
+
+
+
+<footer data-section-name="footer">
+
+    <div class="container-fluid cf-padding">
+       <hr />
+
+        <div class="row">
+            <div class="col-xs-12">
+
+                <ul class="list-unstyled lnk-footer">
+                    <li>
+                        @Html.ActionLink("My account", "MyAccount", new { controller = "Customer" }, new { @class = "account" })
+                    </li>
+                    <li><a href="@Url.RouteUrl("CustomerOrders")">@T("Account.CustomerOrders")</a></li>
+                    <li><a href="/Order/ConfirmPayment">Confirm payment</a></li>
+                    <li><a href="@Url.RouteUrl("ContactUs")">Contact customer care</a></li>
+
+                    @foreach (var topic in Model.Topics.Where(x => x.IncludeInFooterColumn1).ToList())
+                    {
+                        <li><a href="@Url.RouteUrl("Topic", new { SeName = topic.SeName })">@topic.Name</a></li>
+                    }
+                    @*<li><a href="@Url.RouteUrl("Topic", new {SeName = Html.GetTopicSeName("help") })">Order and shipping information</a></li>
+                    <li><a href="@Url.RouteUrl("Topic", new {SeName = Html.GetTopicSeName("conditionsofuse") })">@T("ConditionsOfUse")</a></li>
+                    <li><a href="@Url.RouteUrl("Topic", new {SeName = Html.GetTopicSeName("returnpolicy") })">@T("ReturnPolicy")</a> </li>
+                    <li><a href="@Url.RouteUrl("Topic", new {SeName = Html.GetTopicSeName("faq") })">@T("FAQ")</a> </li>*@
+
+                </ul>
+
+                <div id="nieuwsbrief">
+                    <span class="hidden-xs">Newsletter</span>
+                    <form id="mc-embedded-subscribe-form" class="form-inline validate" target="_blank" name="mc-embedded-subscribe-form" method="post" action="">
+                        <div class="form-group" style="vertical-align:top;">
+                            <input id="mce-EMAIL" class="email" type="email" style="" placeholder="Enter your email" name="EMAIL" value="" required="required" /><input id="mc-embedded-subscribe" type="submit" style="" name="subscribe" value="" />
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+            
+        </div>
+        <div class="row" style="margin-top:95px;">
+            <div class="col-xs-12">
+                @*<div class="copy">&copy;</div>*@
+                <div class="copy">
+                    <img src="~/Themes/v1/Content/images/logo_footer.svg" style="max-width:30px;" />
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+@*<footer data-section-name="footer">
+
+    <div class="container-fluid cf-padding">
+
+        <div class="row">
+            <div class="col-xs-7 col-sm-4 col-md-2">
+              
+                <ul class="list-unstyled lnk-footer">
+                    @foreach (var topic in Model.Topics.Where(x => x.IncludeInFooterColumn1).ToList())
+                    {
+                        <li><a href="@Url.RouteUrl("Topic", new { SeName = topic.SeName })">@topic.Name</a></li>
+                    }
+                    <li><a href="@Url.RouteUrl("Topic", new {SeName = Html.GetTopicSeName("help") })">Order and shipping information</a></li>
+                    <li><a href="@Url.RouteUrl("Topic", new {SeName = Html.GetTopicSeName("conditionsofuse") })">@T("ConditionsOfUse")</a></li>
+                    <li><a href="@Url.RouteUrl("Topic", new {SeName = Html.GetTopicSeName("returnpolicy") })">@T("ReturnPolicy")</a> </li>
+                    <li><a href="@Url.RouteUrl("Topic", new {SeName = Html.GetTopicSeName("faq") })">@T("FAQ")</a> </li>
+                    <li><a href="~/jobs">Jobs</a></li>
+                </ul>
+
+            </div>
+
+            <div class="col-xs-6 col-sm-4 col-md-5">
+
+                <ul class="list-unstyled lnk-footer">
+                    <li>
+                        @Html.ActionLink("My account", "MyAccount", new { controller = "Customer" }, new { @class = "account" })
+                    </li>
+                    <li><a href="@Url.RouteUrl("CustomerOrders")">@T("Account.CustomerOrders")</a></li>
+                    <li><a href="/Order/ConfirmPayment">Confirm payment</a></li>
+                    <li><a href="@Url.RouteUrl("ContactUs")">Contact customer care</a></li>
+                </ul>
+
+              
+            </div>
+       
+            <div class="col-xs-6 col-sm-4 col-md-3">
+                <p class="footer__info">
+                    We are driven to help you make an easier decision, to focus on the essentials in life. Lifewears and basics are not meant to uniform people instead it focuses to identify uniqueness of our personality,
+                    to help us function at our best to fulfill our purpose for better tomorrows. The future is ours.
+                </p>
+             
+            </div>
+            <div class="col-sm-4 col-md-2">
+                <ul class="list-unstyled lnk-footer">
+                    @foreach (var topic in Model.Topics.Where(x => x.IncludeInFooterColumn3).ToList())
+                    {
+                        <li><a href="@Url.RouteUrl("Topic", new { SeName = topic.SeName })">@topic.Name</a></li>
+                    }
+
+                    <li><a href="@Url.RouteUrl("Topic", new {SeName = Html.GetTopicSeName("help") })">Order and shipping information</a></li>
+                    <li><a href="@Url.RouteUrl("Topic", new {SeName = Html.GetTopicSeName("conditionsofuse") })">@T("ConditionsOfUse")</a></li>
+                    <li><a href="@Url.RouteUrl("Topic", new {SeName = Html.GetTopicSeName("returnpolicy") })">@T("ReturnPolicy")</a> </li>
+                    <li><a href="@Url.RouteUrl("Topic", new {SeName = Html.GetTopicSeName("faq") })">@T("FAQ")</a> </li>
+                    <li><a href="~/jobs">Jobs</a></li>
+                </ul>
+    
+                    <div id="nieuwsbrief">
+                    <span class="hidden-xs">
+                        Subscribe for newsletter
+                    </span>
+                    <form id="mc-embedded-subscribe-form" class="form-inline validate" target="_blank" name="mc-embedded-subscribe-form" method="post" action="http://shopatvelvet.us4.list-manage1.com/subscribe/post?u=258a0b1ca488d7b87315ec2ee&id=139537e9d1">
+                        <div class="form-group" style="vertical-align:top;">
+                            <input id="mce-EMAIL" class="email" type="email" style="" placeholder="email" name="EMAIL" value="" required="required" />
+                            <br />
+                            <input id="mc-embedded-subscribe" type="submit" style="" name="subscribe" value="Subscribe" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-7 col-sm-4 col-md-2">
+               <div class="copy">&copy;</div>
+            </div>
+            <div class="col-xs-6 col-sm-4 col-md-5">&nbsp;</div>
+
+            <div class="col-xs-6 col-sm-4 col-md-3">
+                <p class="footer__brand"><img src="~/Themes/v1/Content/images/logo.svg" /></p>
+            </div>
+            <div class="col-sm-4 col-md-2">&nbsp;</div>
+        </div>
+    </div>
+</footer>*@
+@*<span id="siteby">site by: flitts</span>*@
+@*<li class="hidden-xs" style="color:transparent;">site by: <a href="http://www.flitts.com/" target="_blank" style="color:transparent;">flitts</a></li>*@
