@@ -33,17 +33,10 @@
     <div class="login">
         @*<h2>@T("Account.Login.ReturningCustomer")</h2>*@
 
-        @using (Ajax.BeginForm("Login", "Customer", new AjaxOptions
-        {
-            InsertionMode = InsertionMode.InsertAfter,
-            HttpMethod = "POST",
-            LoadingElementId = "ajax-loader",
-            OnSuccess = "loginCallback",
-            UpdateTargetId = "pnlMsg"
-        }, new { id = "form1", @class = "login-form" }))
+        @using (Html.BeginForm())
         {
             @Html.AntiForgeryToken()
-            var validationSummary = Html.ValidationSummary(true, T("Account.Login.Unsuccessful").Text);
+
             @*<div style="font-style:normal; color:#cd6369;">
                 Since we have moved to a new website, please retrieve your password by clicking "forgot password" and follow the link provided in the email.
             </div>*@
@@ -91,7 +84,6 @@
                 </div>
             }
 
-            <div id="pnlMsg" class="text-danger">@validationSummary</div>
 
             <div class="form-group">
                 <div class="buttons">
@@ -140,29 +132,7 @@
 @section scripts
 {
     @Scripts.Render("~/bundles/jqueryval")
-    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
-    <script>
-        function loginCallback(data) {
-            if (data.ok) {
-                if (data.msg != "")
-                {
-                    $("#pnlMsg").html(data.msg);
-                }
-                else
-                {
-                    $("#pnlMsg").html('');
-                }
-                if (window.location.search.toString().includes("admin")) {
-                    data.newurl = "/admin"
-                } 
-                window.location = data.newurl;
-            }
-            else {
-                $("#pnlMsg").html(data.msg);
-            }
-        }
 
-    </script>
 }
 
 
@@ -198,7 +168,3 @@
         });
 
     </script>*@
-
-    
-
-

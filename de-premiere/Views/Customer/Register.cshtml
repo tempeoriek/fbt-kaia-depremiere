@@ -14,23 +14,14 @@
 <div class="col-main-sml mt-normal">
     <h1>@T("Account.Register")</h1>
 
-    @using (Ajax.BeginForm("Register", "Customer", new AjaxOptions
-    {
-        InsertionMode = InsertionMode.Replace,
-        HttpMethod = "POST",
-        OnFailure = "reqfailed",
-        OnSuccess = "loginCallbackRegister",
-        LoadingElementId = "ajax-loader",
-        UpdateTargetId = "pnlRegister",
-
-    }, new { id = "formRegister", @class = "login-form" }))
+    @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
 
 
 
             <!--form-->
-        <div class="panel panel-default login" id="pnlRegister">
+        <div class="panel panel-default login">
             <div class="panel-body">
                 <div class="message-error">
                     @Html.ValidationSummary(true)
@@ -358,33 +349,7 @@
 @section scripts{
 
     @Scripts.Render("~/bundles/jqueryval")
-    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
-    <script>
-        function reqfailed() {
-            $("#pnlfailure").html("Sorry, an error occured.");
-        }
 
-        function loginCallbackRegister(data) {
-
-            if (data.ok) {
-                if (data.msg != "") {
-                    $("#pnlfailure").html(data.msg);
-                }
-                else {
-                    $("#pnlfailure").html('');
-                }
-
-                $("#form-register-body").hide();
-
-                //window.location = data.newurl;
-            }
-            else {
-                $("#pnlfailure").html(data.msg);
-            }
-        }
-
-
-    </script>
     @*@if (Model.AcceptPrivacyPolicyEnabled)
             {
 
