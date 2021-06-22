@@ -17,7 +17,7 @@
     @Html.Action("CustomerNavigation", "Customer", new { selectedTabId = CustomerNavigationEnum.Info, isMobile = true })
 }
 
-<div class="col-main-sml mt-normal">
+<div class="col-main-sml mt-normal login-mobile-top">
     @*<h1>@T("Account.CustomerInfo")</h1>*@
     @using (Html.BeginForm())
     {
@@ -29,7 +29,7 @@
             <div class="message-error">@validationSummary</div>
         }
 
-        <div class="form-fields">
+        <div class="form-fields" style="text-transform: uppercase;">
 
             <div class="form-group">
                 @Html.LabelFor(model => model.FirstName, new { @class = "control-label" }, ":") @*@Html.RequiredHint()*@
@@ -66,12 +66,17 @@
                 </div>
             }
 
-            <div class="form-group row">
+            <div class="form-group">
 
 
-                @Html.LabelFor(model => model.Email, new { @class = "col-xs-3 control-label" }, ":")
+                @* @Html.LabelFor(model => model.Email, new { @class = "col-xs-3 control-label" }, ":")
                 <div class="col-xs-9 text-right">
-                    @Html.DisplayFor(model => model.Email)
+                    @Html.ValidationMessageFor(model => model.Email)
+                </div> *@
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Email, new { @class = "control-label" }, ":") @*@Html.RequiredHint()*@
+                    @Html.TextBoxFor(model => model.Email, new { @class = "form-control whitedisabled", @disabled="true" })
+
                     @Html.ValidationMessageFor(model => model.Email)
                 </div>
             </div>

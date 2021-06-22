@@ -12,7 +12,7 @@
                                 <nav role='navigation'>
                                     <ul class='nav-mob'>
                                         <li class="list-group-item">
-                                            <a href="@Url.Action("MyAccount")" class="@if (Model.SelectedTab == CustomerNavigationEnum.MyAccount)
+                                            <a style="text-transform: uppercase;" href="@Url.Action("MyAccount")" class="@if (Model.SelectedTab == CustomerNavigationEnum.MyAccount)
                                                                    {<text>active</text>}
                                                                    else
                                                                    {<text>inactive</text>}">My Account</a>
@@ -21,7 +21,7 @@
                                                             @if (!Model.HideInfo)
                                                             {
                                                                 <li class="list-group-item">
-                                                                    <a href="@Url.RouteUrl("CustomerInfo")" class="@if (Model.SelectedTab == CustomerNavigationEnum.Info)
+                                                                    <a style="text-transform: uppercase;" href="@Url.RouteUrl("CustomerInfo")" class="@if (Model.SelectedTab == CustomerNavigationEnum.Info)
                                                                    {<text>active</text>}
                                                                    else
                                                                    {<text>inactive</text>}">Account details@*@T("Account.CustomerInfo")*@</a>
@@ -30,7 +30,7 @@
                                                             @if (!Model.HideAddresses)
                                                             {
                                                                 <li class="list-group-item">
-                                                                    <a href="@Url.RouteUrl("CustomerAddressAdd")" class="@if (Model.SelectedTab == CustomerNavigationEnum.Addresses)
+                                                                    <a style="text-transform: uppercase;" href="@Url.RouteUrl("CustomerAddressAdd")" class="@if (Model.SelectedTab == CustomerNavigationEnum.Addresses)
                                                                         {<text>active</text>}
                                                                         else
                                                                         {<text>inactive</text>}">Address book@*@T("Account.CustomerAddresses")*@</a>
@@ -40,7 +40,7 @@
                                                             @if (!Model.HideChangePassword)
                                                             {
                                                                 <li class="list-group-item">
-                                                                    <a href="@Url.RouteUrl("CustomerChangePassword")" class="@if (Model.SelectedTab == CustomerNavigationEnum.ChangePassword)
+                                                                    <a style="text-transform: uppercase;" href="@Url.RouteUrl("CustomerChangePassword")" class="@if (Model.SelectedTab == CustomerNavigationEnum.ChangePassword)
                                                                              {<text>active</text>}
                                                                              else
                                                                              {<text>inactive</text>}">@T("Account.ChangePassword")</a>
@@ -50,7 +50,7 @@
                                                             @if (!Model.HideOrders)
                                                             {
                                                                 <li class="list-group-item">
-                                                                    <a href="@Url.RouteUrl("CustomerOrders")" class="@if (Model.SelectedTab == CustomerNavigationEnum.Orders)
+                                                                    <a style="text-transform: uppercase;" href="@Url.RouteUrl("CustomerOrders")" class="@if (Model.SelectedTab == CustomerNavigationEnum.Orders)
                                                                      {<text>active</text>}
                                                                      else
                                                                      {<text>inactive</text>}">@T("Account.CustomerOrders")</a>
@@ -59,27 +59,27 @@
 
                                                             @*Giftcards
                             <li class="list-group-item">
-                                <a href="~/giftcards" class="@if (Model.SelectedTab == CustomerNavigationEnum.GiftCards)
+                                <a style="text-transform: uppercase;" href="~/giftcards" class="@if (Model.SelectedTab == CustomerNavigationEnum.GiftCards)
                                                                {<text>active</text>}
                                                                else
                                                                {<text>inactive</text>}">E-Gift card</a>
                             </li>
 
                                         <li class="list-group-item">
-                                            <a href="~/giftcards/PendingPaymentByQty" class="@if (Model.SelectedTab == CustomerNavigationEnum.GiftCardsPendingPayment)
+                                            <a style="text-transform: uppercase;" href="~/giftcards/PendingPaymentByQty" class="@if (Model.SelectedTab == CustomerNavigationEnum.GiftCardsPendingPayment)
                                                                                {<text>active</text>}
                                                                                else
                                                                                {<text>inactive</text>}">Pending Payments</a>
                                         </li>*@
 
                                                             <li class="list-group-item">
-                                                                <a href="~/Order/ConfirmPayments" class="@if (Model.SelectedTab == CustomerNavigationEnum.ConfirmPayment)
+                                                                <a style="text-transform: uppercase;" href="~/Order/ConfirmPayments" class="@if (Model.SelectedTab == CustomerNavigationEnum.ConfirmPayment)
                                                                                  {<text>active</text>}
                                                                                  else
                                                                                  {<text>inactive</text>}">Confirm payment</a>
                                                             </li>
                                                             <li class="list-group-item">
-                                                                <a href="@Url.RouteUrl("Logout")">@T("Account.Logout")</a>
+                                                                @* <a style="text-transform: uppercase;" href="@Url.RouteUrl("Logout")">@T("Account.Logout")</a> *@
                                                             </li>
 
                                                         </ul>
@@ -98,13 +98,37 @@
 
                 </div><!-- .cd-half-block -->
                 <div class="cd-half-block">
-                    <br /><br /><br />
+                    <br /><br />
                     <div class="list-group">
                         <ul class="list-unstyled">
-                            <li class="list-group-item"></li>
-                            <li class="list-group-item"></li>
-                            <li class="list-group-item"></li>
-                            <li class="list-group-item"><a href="~/">Back to shop</a></li>
+                            <li class="list-group-item"><a style="text-transform: uppercase;" href="~/">Back to shop</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="dropright dropright-list" style="padding: 0 25px 3px;">
+                    <a style="text-transform: uppercase;" href="#" class="menu-right-mobile" data-toggle="collapse" data-target="#collapse-help" aria-expanded="false" aria-controls="collapse-help">Help</a>
+                    <div class="collapse c-help" id="collapse-help" style="list-style:none; margin-left: 10px;">
+                        <li><a style="text-transform: capitalize;" href="@Url.RouteUrl("Topic", new {SeName = Html.GetTopicSeName("faq") })">@T("FAQ")</a> </li>
+                        <li><a style="text-transform: capitalize;" href="@Url.RouteUrl("Topic", new {SeName = Html.GetTopicSeName("conditionsofuse") })">@T("ConditionsOfUse")</a></li>
+                        <li><a style="text-transform: capitalize;" href="@Url.RouteUrl("Topic", new {SeName = Html.GetTopicSeName("returnpolicy") })">@T("ReturnPolicy")</a> </li>
+                    </div>
+                </div>
+                <div class="dropright dropright-list" style="padding: 0 25px 3px;">
+                    <a style="text-transform: uppercase;" href="#" class="menu-right-mobile" data-toggle="collapse" data-target="#collapse-contact" aria-expanded="false" aria-controls="collapse-contact">Contact</a>
+                    <div class="collapse c-contact" id="collapse-contact" style="list-style:none; margin-left: 10px;">
+                        <li><a href="@Url.RouteUrl("ContactUs")">Contact customer care</a></li>
+                        <li>Email: <a href="mailto:info@shopforbettertomorrows.com">info@shopforbettertomorrows.com</a></li>
+                    </div>
+                </div>
+                <div class="cd-half-block">
+                    <div class="list-group">
+                        <ul class="list-unstyled">
+                            <li class="list-group-item">
+                                <a style="text-transform: uppercase;" href="@Url.RouteUrl("Logout")">@T("Account.Logout")</a>
+                            </li>
+                            <li class="list-group-item">
+                                @Html.Action("SearchBox", "Catalog")
+                            </li>
 
                         </ul>
                     </div>

@@ -8,9 +8,9 @@
 @using (Html.BeginRouteForm("ProductSearch", FormMethod.Get, new { id = "small-search-box-form" }))
 {
     <fieldset>
-        <input type="text" class="tbsearch" id="small-searchterms" autocomplete="off" name="q" placeholder="" />
+        <input type="text" class="tbsearch" id="small-searchterms" autocomplete="off" name="q" placeholder="SEARCH" style="padding: 0; font-size: 11px;"/>
         @Html.Widget("searchbox_before_search_button")
-        <button type="submit" id="search_submit" class="zoeken"><i class="fa fa-search"></i></button>
+        @* <button type="submit" id="search_submit" class="zoeken"><i class="fa fa-search"></i></button> *@
     </fieldset>
     
     @*if (Model.SearchTermMinimumLength > 0)

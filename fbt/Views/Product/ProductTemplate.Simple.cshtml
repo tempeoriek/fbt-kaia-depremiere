@@ -60,7 +60,7 @@
         </div>
         <div class="col-xs-12 col-sm-6 col-md-6">
 
-            <div id="divPanelImages">
+            <div id="divPanelImages" class="product-pic-catalog">
                 @Html.Partial("_ProductDetailsPictures", Model)
             </div>
           
@@ -273,6 +273,7 @@
 
 
 
+    
 @section scripts
 {
     <script type="text/javascript">
@@ -331,9 +332,6 @@
     <script type="text/javascript" src="~/Scripts/jquery.magnific-popup.js"></script>
 
 
-
-
-
     <!-- -->
     <script src="~/Scripts/app/waypoints/noframework.waypoints.min.js"></script>
     <script>
@@ -369,7 +367,9 @@
     </script>
 
 
+    
     <script>
+       
         $(document).ready(function () {
 
             //$('#body-content').scroll(function () {
@@ -426,7 +426,30 @@
 
     </script>
     <!-- -->
+    <link rel="stylesheet" type="text/css" href="~/Scripts/app/slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="~/Scripts/app/slick/slick-theme.css">
 
+    <script src="~/Scripts/app/slick/slick.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+
+        $(document).ready(function () {
+            $('.carouselproductmobile').slick({
+                slidesToShow: 1,
+                dots: false,
+                centerMode: false,
+                arrows: false
+            });
+        });
+
+        $('.leftarrow').click(function () {
+            $('.carouselproductmobile').slick('slickPrev');
+        })
+
+        $('.rightarrow').click(function () {
+            $('.carouselproductmobile').slick('slickNext');
+        })
+
+    </script>
 }
 
 @section HeaderSection
@@ -439,12 +462,11 @@
 
 
     <style>
+        
         #divPanelImages {
             width: 100%;
-            /*height: 80vh;*/
             height:100%;
             max-height:1736px;
-            margin-top:40px;
             overflow-y: scroll; 
         }
 

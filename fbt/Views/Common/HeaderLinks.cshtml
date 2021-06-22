@@ -277,3 +277,14 @@
             });
         </script>
     }*@
+
+<script>
+    $(".cd-nav-trigger").on("click", function (index) {
+        console.log("TEST MASUK")
+        if ($(this).hasClass( "closeheadericon" )) {
+            $(this).removeClass("closeheadericon");
+        } else {
+            $(this).addClass("closeheadericon");
+        }
+    });
+</script>
