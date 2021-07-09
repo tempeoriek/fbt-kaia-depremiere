@@ -68,9 +68,6 @@
             }
             <div class="form-group">
                 @* @Html.LabelFor(m => m.Password, new { @class = "control-label" }, ":") *@
-                <span class="forgot-password pull-right">
-                    @Html.RouteLink(T("Account.Login.ForgotPassword").Text, "PasswordRecovery")
-                </span>
 
                 @Html.PasswordFor(m => m.Password, new { placeholder = "Password", @class = "password form-control" })
                 @Html.ValidationMessageFor(m => m.Password)
@@ -83,11 +80,15 @@
                     @Html.Raw(Html.GenerateCaptcha())
                 </div>
             }
-
+            <div class="form-group">
+                <span class="forgot-password">
+                    @Html.RouteLink(T("Account.Login.ForgotPassword").Text, "PasswordRecovery")
+                </span>
+            </div>
 
             <div class="form-group">
                 <div class="buttons">
-                    <input class="btn btn-default" type="submit" value="@T("Account.Login.LoginButton")" />
+                    <input style="text-transform: uppercase;" class="btn btn-default" type="submit" value="@T("Account.Login.LoginButton")" />
                 </div>
             </div>
 
@@ -105,8 +106,8 @@
             <p>
                 @Html.Action("TopicBlock", "Topic", new { systemName = "CheckoutAsGuestOrRegister" })
             </p>
-            <input type="button" class="button-1 checkout-as-guest-button btn btn-default" onclick="location.href='@Url.RouteUrl("Checkout")'" value="@T("Account.Login.CheckoutAsGuest")" />
-            <input type="button" class="button-1 register-button btn btn-default" onclick="location.href='@registerUrl'" value="@T("Account.Register")" />
+            <input type="button" style="text-transform: uppercase;" class="button-1 checkout-as-guest-button btn btn-default" onclick="location.href='@Url.RouteUrl("Checkout")'" value="@T("Account.Login.CheckoutAsGuest")" />
+            <input type="button" style="text-transform: uppercase;" class="button-1 register-button btn btn-default" onclick="location.href='@registerUrl'" value="@T("Account.Register")" />
 
         }
         else
@@ -118,7 +119,7 @@
             </p>
             <div class="form-group">
                 <div class="buttons">
-                    <input type="button" class="btn btn-default" onclick="location.href='@registerUrl'" value="@T("Account.Register")" />
+                    <input type="button" style="text-transform: uppercase;" class="btn btn-default" onclick="location.href='@registerUrl'" value="@T("Account.Register")" />
                 </div>
             </div>
 

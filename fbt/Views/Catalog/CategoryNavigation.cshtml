@@ -182,16 +182,16 @@ if (category.SeName.Equals("shop-collection", StringComparison.OrdinalIgnoreCase
 
             @*Content*@
             <li class="list-group-item">
-                <a style="text-transform: uppercase;" href="@Url.RouteUrl("Topic", new {SeName = Html.GetTopicSeName("aboutus") })"
+                <a style="text-transform: uppercase; cursor: pointer;" href="@Url.RouteUrl("Topic", new {SeName = Html.GetTopicSeName("aboutus") })"
                    class="@if (url == Html.GetTopicSeName("aboutus"))
                           {<text>active</text>} else {<text>inactive</text>}">@T("AboutUs")</a>
                     </li>
 
-                    <li class="list-group-item">
+                    @* <li class="list-group-item">
                         <a style="text-transform: uppercase;" href="@Url.RouteUrl("Topic", new {SeName = Html.GetTopicSeName("stockist") })"
                            class="@if (url == Html.GetTopicSeName("stockist"))
                           {<text>active</text>} else {<text>inactive</text>}">@T("stockist")</a>
-                    </li>
+                    </li> *@
 
                     @*<li class="list-group-item"><a href="@Url.RouteUrl("ContactUs")">@T("ContactUs")</a></li>
                         <li class="list-group-item"><a href="@Url.RouteUrl("Topic", new {SeName = Html.GetTopicSeName("HowToOrder") })">How to order</a></li>*@

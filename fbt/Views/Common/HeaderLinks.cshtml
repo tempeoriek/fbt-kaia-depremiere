@@ -54,18 +54,18 @@
 
                     <ul id="tabs" class="nav navbar-nav" role="tablist">
                         <li role="presentation" class="tab-menu eerst tab-toggle">
-                            <a data-toggle="tab" href="#search">Search</a>
+                            <a data-toggle="tab" style="color: black;" href="#search">Search</a>
                         </li>
 
                         <li role="presentation" class="tab-menu tweede tab-toggle">
-                            <a data-toggle="tab" href="#help">Help</a> @*@currencyActief*@
+                            <a data-toggle="tab" style="color: black;" href="#help">Help</a> @*@currencyActief*@
                         </li>
                         <li role="presentation" class="tab-menu tab-toggle">
-                            <a data-toggle="tab" href="#contact">Contact</a>
+                            <a data-toggle="tab" style="color: black;" href="#contact">Contact</a>
                         </li>
 
                         <li role="presentation" class="tab-menu derde tab-toggle">
-                            <a data-toggle="tab" href="#myaccount">My account</a>
+                            <a data-toggle="tab" style="color: black;" href="#myaccount">My account</a>
                         </li>
 
 
@@ -79,13 +79,13 @@
 
                             @if (!String.IsNullOrWhiteSpace(@Html.Action("FlyoutShoppingCart", "ShoppingCart").ToString()))
                                 {
-                                <a href="#bag" data-toggle="tab" data-hover="tab">
+                                <a href="#bag" data-toggle="tab" data-hover="tab"  style="color: black;">
                                     <span class="cart-label">@T("ShoppingCart"):</span><span class="cart-qty">@Model.ShoppingCartItems</span>
                                 </a>
                                 }
                                 else
                                 {
-                                <a href="@Url.RouteUrl("ShoppingCart")" class="ico-cart">
+                                <a href="@Url.RouteUrl("ShoppingCart")" class="ico-cart"  style="color: black;">
                                     <span class="cart-label">@T("ShoppingCart"):</span> <span class="cart-qty">@Model.ShoppingCartItems</span>
                                 </a>
                                 }
@@ -147,11 +147,11 @@
                                 {
                                 <div class="tab-pane-footer">
                                     <div class="row">
-                                        <div class="col-xs-6 text-center">
-                                            <h3><a href="@Url.RouteUrl("Login")" class="ico-login">@T("Account.Login")</a></h3>
+                                        <div class="col-xs-3 text-left">
+                                            <h3><a style="text-transform: uppercase;" href="@Url.RouteUrl("Login")" class="ico-login">@T("Account.Login")</a></h3>
                                         </div>
-                                        <div class="col-xs-6 text-center">
-                                            <h3><a href="@Url.RouteUrl("Register")" class="ico-register">@T("Account.Register")</a></h3>
+                                        <div class="col-xs-3 text-left">
+                                            <h3><a style="text-transform: uppercase;" href="@Url.RouteUrl("Register")" class="ico-register">@T("Account.Register")</a></h3>
                                         </div>
                                     </div>
                                 </div>

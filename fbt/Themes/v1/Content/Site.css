@@ -70,7 +70,7 @@ body {
     font-family: sav-semi, sav, Georgia, Garamond;
     font-size: 1rem;
     font-weight: 600;
-    color: #231F20;
+    color: black;
     margin: 0;
     line-height: 15px;
     text-rendering: optimizelegibility;
@@ -84,18 +84,18 @@ body {
 
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {line-height: 1.1; margin:0;}
 
-h1{ font-size:11px; margin-bottom:83px; font-family: 'sav', Helvetica, Georgia, Garamond;}
-h2{ font-size:1rem; margin-bottom:25px;}
+h1{ font-size:11px; margin-bottom:83px; font-family: 'sav-semi', Helvetica, Georgia, Garamond;}
+h2{ font-size:1rem; margin-bottom:5px; text-transform: uppercase;}
 h3{ font-size:1rem;}
 
-h2.altfont {font-family: 'sav', Helvetica, Georgia, Garamond; font-size:12px; margin-bottom:25px;}
+h2.altfont {font-family: 'sav-semi', Helvetica, Georgia, Garamond; font-size:12px; margin-bottom:25px;}
 
 label{ font-weight:normal; margin-bottom:0;}
 
 a{color:#231F20;}
 a:hover, a:focus, a:active { text-decoration:none; color:#231F20; border-bottom:2px solid #231F20;}
 
-a.alt{text-decoration:none; color:#414042; border-bottom:1px solid #414042;}
+a.alt{text-decoration:none; color:black; border-bottom:1px solid black;}
 a.alt:hover, a.alt:focus, a.alt:active { border-bottom-color:transparent; }
 
 a.clean:hover, a.clean:focus, a.clean:active { border-bottom-color:transparent; }
@@ -106,10 +106,10 @@ a.alt2:hover{border-bottom:1px solid #b7b7b7;}
 
 .hide{display:none;}
 
-caption{color:#414042; font-size:12px;}
+caption{color:black; font-size:12px;}
 
-ul > li > a{color:#414042;}
-ul > li > a:hover {color: #414042;}
+ul > li > a{color:black}
+ul > li > a:hover {color: black}
 
 
 ul.lst-typeA li{padding-left:0;}
@@ -184,7 +184,7 @@ hr {
 .red{color: #cd6369;}
 
 
-input:focus, select:focus, a:focus, textarea:focus{border-color:#414042; outline:medium none;}
+input:focus, select:focus, a:focus, textarea:focus{border-color:black; outline:medium none;}
 
 .text-danger,
 .message-error ul li,
@@ -202,18 +202,18 @@ input:focus, select:focus, a:focus, textarea:focus{border-color:#414042; outline
     background-color:transparent;
     border-radius: 0;
     display: block;
-    height: 28px;
+    height: 19px;
     width: 100%;
-    padding: 0 3px 0;
-    color:#414042;
+    padding: 0;
+    color:black;
     
     border:none;
-    border-bottom:1px solid #231f20;
+    border-bottom:1px solid black;
     font-size:1rem;
     vertical-align:middle;
     letter-spacing:1px;
 }
-.form-control:focus {box-shadow:none; border-color:#414042;}
+.form-control:focus {box-shadow:none; border-color:black;}
 .form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
     background-color: transparent;
     opacity: 1;
@@ -242,7 +242,8 @@ select.form-control {
 .btn{
     -moz-appearance: none;
     -webkit-appearance: none;
-    height:37px;
+    height:30px;
+    width:100px;
     font-size:1rem;
     padding: 0 20px;
     border-radius:0;
@@ -286,7 +287,7 @@ select.form-control {
     /* border-color:#cccccc; */
     min-width:156px;
     background-color:#ffffff;
-    color:#414042;
+    color:black;
 }
 .btn-info:hover{
     color:#ffffff; background-color:#383838;
@@ -719,7 +720,7 @@ li.tab-menu  > a:active { text-decoration:none; color:#383838; border-bottom:1px
     right: -5px;
     position: absolute;
     z-index: 4;
-    width:325px;
+    width:310px;
     visibility: hidden;
     font-size:0.90rem;
 }
@@ -733,7 +734,7 @@ li.tab-menu  > a:active { text-decoration:none; color:#383838; border-bottom:1px
     -o-transition: height 0.15s cubic-bezier(0.17, 0.605, 0.315, 0.875) 0s;
     -webkit-transition: height 0.15s cubic-bezier(0.17, 0.605, 0.315, 0.875) 0s;
     transition: height 0.15s cubic-bezier(0.17, 0.605, 0.315, 0.875) 0s;
-    margin: 0 10px 5px;
+    margin: 0 12px 5px;
 }
 
 #top-nav .tab-content .tab-pane {
@@ -774,7 +775,7 @@ li.tab-menu  > a:active { text-decoration:none; color:#383838; border-bottom:1px
     background: none repeat scroll 0 0 #fff;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
 }
-.tab-pane-footer { margin-top:20px;padding-top:20px; border-top:1px solid #b7b7b7;}
+.tab-pane-footer { margin-top:20px;padding-top:20px; }
 
 .ico-logout{margin:10px 0;}
 
@@ -1061,10 +1062,10 @@ li.list-group-item > a{
 .homepagev2{ margin-top:111px; }
 .homepagev2 h3, 
 .homepagev2 h2 {}
-.homepagev2 h3 {text-transform:capitalize; margin-top:20px; font-size:1rem;}
-.homepagev2 h4 {text-transform:uppercase; margin-top:20px; font-size:11px;}
+.homepagev2 h3 {text-transform:capitalize; margin-top:5px; font-size:1rem;}
+.homepagev2 h4 {text-transform:uppercase; margin-top:5px; font-size:11px;}
 .homepagev2 h3 a,
-.homepagev2 h4 a {border-bottom:1px solid #414042;}
+.homepagev2 h4 a {border-bottom:1px solid black;}
 .homepagev2 h3 a:hover,
 .homepagev2 h4 a:hover { color:#004eff; border-bottom-color:#004eff; }
 
@@ -1189,7 +1190,7 @@ li.prod-image{margin-bottom:27px;}
 
 .prod-details .sizeguide a{}
 .prod-details .sizeguide a:hover, 
-.prod-details .sizeguide a:focus{border-bottom:1px solid #414042;}
+.prod-details .sizeguide a:focus{border-bottom:1px solid black;}
 
 .prod-details .attributes{ margin:5px 0;}
 .prod-details .attributes__label{margin-bottom:9px;}
@@ -1272,7 +1273,7 @@ li.prod-image{margin-bottom:27px;}
     display: inline-block;
     margin-right: 0;
     padding: 5px 11px 5px 0;
-    border:1px solid #414042;
+    border:1px solid black;
     text-transform:uppercase;
 }
 
@@ -1337,14 +1338,16 @@ li.prod-image{margin-bottom:27px;}
 
 
 .panel-info{}
-.panel-info > .panel-heading{  border-bottom:1px solid #414042; color:inherit; background-color:transparent; padding:0 0 7px;}
+.panel-info > .panel-heading{  border-bottom:1px solid black; color:inherit; background-color:transparent; padding:0 0 7px;}
 .panel-info .panel-body{padding:10px 0;}
 .panel-info .buttons{margin-top:0;}
 
 
 
 .fieldset{ margin-bottom:3em;}
-.form-fields{}
+.form-fields{
+    margin-bottom: 32px;
+}
 
 
 
@@ -1488,7 +1491,7 @@ table.basic td span{display:block;}
     margin: 0;
     width: 100%;
     padding: 10px 0; 
-    border-bottom:1px solid #414042; 
+    border-bottom:1px solid black; 
 }
 
 #bigCart .productRows li { min-height:120px; margin: 4px 0; position: relative;}
