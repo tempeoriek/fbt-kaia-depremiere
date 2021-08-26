@@ -17,11 +17,11 @@
 
                 <ul class="list-unstyled lnk-footer">
                     <li>
-                        @Html.ActionLink("My account", "MyAccount", new { controller = "Customer" }, new { @class = "account" })
+                        @Html.ActionLink("My Account", "MyAccount", new { controller = "Customer" }, new { @class = "account" })
                     </li>
                     <li><a href="@Url.RouteUrl("CustomerOrders")">@T("Account.CustomerOrders")</a></li>
-                    <li><a href="/Order/ConfirmPayment">Confirm payment</a></li>
-                    <li><a href="@Url.RouteUrl("ContactUs")">Contact customer care</a></li>
+                    <li><a href="/Order/ConfirmPayment">Confirm Payment</a></li>
+                    <li><a href="@Url.RouteUrl("ContactUs")">Contact Customer Care</a></li>
 
                     @foreach (var topic in Model.Topics.Where(x => x.IncludeInFooterColumn1).ToList())
                     {
@@ -35,10 +35,10 @@
                 </ul>
 
                 <div id="nieuwsbrief">
-                    <span class="hidden-xs">Newsletter</span>
+                    <p style="padding: 0 !important; margin: 0 !important;">NEWSLETTER</p>
                     <form id="mc-embedded-subscribe-form" class="form-inline validate" target="_blank" name="mc-embedded-subscribe-form" method="post" action="">
-                        <div class="form-group" style="vertical-align:top;">
-                            <input id="mce-EMAIL" class="email" type="email" style="" placeholder="Enter your email" name="EMAIL" value="" required="required" /><input id="mc-embedded-subscribe" type="submit" style="" name="subscribe" value="" />
+                        <div class="form-group" style="vertical-align:top; margin-top: -10px">
+                            <input id="mce-EMAIL" class="email" type="email" style="" placeholder="Enter Email Here" name="EMAIL" value="" required="required" /><input id="mc-embedded-subscribe" type="submit" style="" name="subscribe" value="" />
                         </div>
                     </form>
                 </div>
@@ -46,11 +46,11 @@
             </div>
             
         </div>
-        <div class="row" style="margin-top:95px;">
+        <div class="row" style="margin-top:65px;">
             <div class="col-xs-12">
                 @*<div class="copy">&copy;</div>*@
                 <div class="copy">
-                    <img src="~/Themes/v1/Content/images/logo_footer.svg" style="max-width:30px;" />
+                    <img src="~/Themes/v1/Content/images/logo_footer.svg" style="max-width: 60px;" />
                 </div>
             </div>
         </div>

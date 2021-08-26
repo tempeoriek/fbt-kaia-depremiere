@@ -29,7 +29,7 @@
 
   @if (Model.PictureModels.Count > 0)
   {
-    <ul class="list-unstyled hidden-xs text-center">
+    <ul class="list-unstyled hidden-xs text-center" style="padding-right: 60px;">
         @foreach (var p in Model.PictureModels)
         {
             <li class="prod-image zoom-link">
@@ -87,7 +87,7 @@
             }
 
             <div class="item @firstactive">
-                <img class="d-block w-100 bannerhomeheader" src="@img.FullSizeImageUrl">
+                <img style="width: 100%;" src="@img.FullSizeImageUrl">
             </div>
 
             index++;

@@ -54,18 +54,18 @@
 
                     <ul id="tabs" class="nav navbar-nav" role="tablist">
                         <li role="presentation" class="tab-menu eerst tab-toggle">
-                            <a data-toggle="tab" style="color: black;" href="#search">Search</a>
+                            <a class="sav-semi" data-toggle="tab" style="color: black;" href="#search">Search</a>
                         </li>
 
                         <li role="presentation" class="tab-menu tweede tab-toggle">
-                            <a data-toggle="tab" style="color: black;" href="#help">Help</a> @*@currencyActief*@
+                            <a class="sav-semi" data-toggle="tab" style="color: black;" href="#help">Help</a> @*@currencyActief*@
                         </li>
                         <li role="presentation" class="tab-menu tab-toggle">
-                            <a data-toggle="tab" style="color: black;" href="#contact">Contact</a>
+                            <a class="sav-semi" data-toggle="tab" style="color: black;" href="#contact">Contact</a>
                         </li>
 
                         <li role="presentation" class="tab-menu derde tab-toggle">
-                            <a data-toggle="tab" style="color: black;" href="#myaccount">My account</a>
+                            <a class="sav-semi" data-toggle="tab" style="color: black;" href="#myaccount">My Account</a>
                         </li>
 
 
@@ -79,13 +79,13 @@
 
                             @if (!String.IsNullOrWhiteSpace(@Html.Action("FlyoutShoppingCart", "ShoppingCart").ToString()))
                                 {
-                                <a href="#bag" data-toggle="tab" data-hover="tab"  style="color: black;">
+                                <a class="sav-semi" href="#bag" data-toggle="tab" data-hover="tab"  style="color: black;">
                                     <span class="cart-label">@T("ShoppingCart"):</span><span class="cart-qty">@Model.ShoppingCartItems</span>
                                 </a>
                                 }
                                 else
                                 {
-                                <a href="@Url.RouteUrl("ShoppingCart")" class="ico-cart"  style="color: black;">
+                                <a class="sav-semi" href="@Url.RouteUrl("ShoppingCart")" class="ico-cart"  style="color: black;">
                                     <span class="cart-label">@T("ShoppingCart"):</span> <span class="cart-qty">@Model.ShoppingCartItems</span>
                                 </a>
                                 }
@@ -100,27 +100,27 @@
 
                     <div class="tab-content">
                         <div class="tab-container">
-                            <div role="tabpanel" id="search" class="tab-pane" style="height:82px">
+                            <div role="tabpanel" id="search" class="tab-pane" style="height:73px">
                                 @Html.Action("SearchBox", "Catalog")
                             </div>
 
-                            <div role="tabpanel" id="help" class="tab-pane" style="height:140px">
+                            <div role="tabpanel" id="help" class="tab-pane" style="height:115px">
                                 <ul class="list-unstyled">
-                                    <li><a href="@Url.RouteUrl("Topic", new {SeName = Html.GetTopicSeName("help") })">Order and shipping information</a> </li>
-                                    <li><a href="@Url.RouteUrl("Topic", new {SeName = Html.GetTopicSeName("faq") })">@T("FAQ")</a> </li>
-                                    <li><a href="@Url.RouteUrl("Topic", new {SeName = Html.GetTopicSeName("conditionsofuse") })">@T("ConditionsOfUse")</a></li>
-                                    <li><a href="@Url.RouteUrl("Topic", new {SeName = Html.GetTopicSeName("returnpolicy") })">@T("ReturnPolicy")</a> </li>
+                                    <li><a href="@Url.RouteUrl("Topic", new {SeName = Html.GetTopicSeName("help") })">Order and Shipping Information</a> </li>
+                                    <li><a href="@Url.RouteUrl("Topic", new {SeName = Html.GetTopicSeName("faq") })">FAQ</a> </li>
+                                    <li><a href="@Url.RouteUrl("Topic", new {SeName = Html.GetTopicSeName("conditionsofuse") })">Conditions of User</a></li>
+                                    <li><a href="@Url.RouteUrl("Topic", new {SeName = Html.GetTopicSeName("returnpolicy") })">Return Policy</a> </li>
                                 </ul>
                             </div>
-                            <div role="tabpanel" id="contact" class="tab-pane" style="height:120px">
+                            <div role="tabpanel" id="contact" class="tab-pane" style="height:115px">
                                 <ul class="list-unstyled">
-                                    <li><a href="@Url.RouteUrl("ContactUs")">Contact customer care</a></li>
+                                    <li><a href="@Url.RouteUrl("ContactUs")">Contact Customer Care</a></li>
                                     <li>Email: <a href="mailto:info@shopforbettertomorrows.com">info@shopforbettertomorrows.com</a></li>
                                     @*<li><a href="~/jobs">Jobs</a></li>*@
                                 </ul>
                             </div>
 
-                            <div role="tabpanel" id="myaccount" class="tab-pane" style="height:185px">
+                            <div role="tabpanel" id="myaccount" class="tab-pane" style="height:150px">
 
                                 <ul class="list-unstyled">
 
@@ -131,14 +131,14 @@
                                     }
 
                                     <li>
-                                        @Html.ActionLink("My account", "MyAccount", new { controller = "Customer" }, new { @class = "account" })
+                                        @Html.ActionLink("My Account", "MyAccount", new { controller = "Customer" }, new { @class = "account" })
                                     </li>
                                     <li><a href="@Url.RouteUrl("CustomerOrders")">@T("Account.CustomerOrders")</a></li>
-                                    <li><a href="~/Order/ConfirmPayments">Confirm payment</a></li>
+                                    <li><a href="~/Order/ConfirmPayments">Confirm Payment</a></li>
                                     @*<li> Shipping to: Indonesia</li>*@
                                     @if (Model.IsAuthenticated)
                                     {
-                                    <li class="ico-logout"><a href="@Url.RouteUrl("Logout")">@T("Account.Logout")</a></li>
+                                    <li class="ico-logout"><a class="sav-semi" href="@Url.RouteUrl("Logout")">@T("Account.Logout")</a></li>
                                     }
 
                                 </ul>
@@ -148,10 +148,10 @@
                                 <div class="tab-pane-footer">
                                     <div class="row">
                                         <div class="col-xs-3 text-left">
-                                            <h3><a style="text-transform: uppercase;" href="@Url.RouteUrl("Login")" class="ico-login">@T("Account.Login")</a></h3>
+                                            <h3><a class="sav-semi" style="text-transform: uppercase;" href="@Url.RouteUrl("Login")" class="ico-login">@T("Account.Login")</a></h3>
                                         </div>
                                         <div class="col-xs-3 text-left">
-                                            <h3><a style="text-transform: uppercase;" href="@Url.RouteUrl("Register")" class="ico-register">@T("Account.Register")</a></h3>
+                                            <h3><a class="sav-semi" style="text-transform: uppercase;" href="@Url.RouteUrl("Register")" class="ico-register">@T("Account.Register")</a></h3>
                                         </div>
                                     </div>
                                 </div>
@@ -196,9 +196,9 @@
     <div class="container-fluid cf-padding">
         <table>
             <tr>
-                <td class="logo" style="text-align:left; vertical-align:middle;">
+                <td class="logo" style="text-align:left; vertical-align:middle; padding-top: 21px;">
                     <a href="@Url.RouteUrl("HomePage")" class="clean">
-                        <img title="@storeName" alt="@storeName" src="@Url.Content(logoPath1)" class="img-responsive sav-logo" />
+                        <img title="@storeName" alt="@storeName" src="@Url.Content(logoPath1)"  />
                     </a>
                 </td>
 
@@ -280,11 +280,11 @@
 
 <script>
     $(".cd-nav-trigger").on("click", function (index) {
-        console.log("TEST MASUK")
-        if ($(this).hasClass( "closeheadericon" )) {
+        //console.log("TEST MASUK")
+       /* if ($(this).hasClass( "closeheadericon" )) {
             $(this).removeClass("closeheadericon");
         } else {
             $(this).addClass("closeheadericon");
-        }
+        }*/
     });
 </script>

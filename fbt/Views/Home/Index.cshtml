@@ -126,7 +126,7 @@ else
                                     <div class="col-sm-6">
                                         <a href="@img.NavigateTo"><img class="img-responsive" src="@img.PictureUrl" alt="" /></a>
                                         <div class="">
-                                            <a href="@img.NavigateTo"><h3>@img.Title</h3></a>
+                                            <a class="sav-semi" href="@img.NavigateTo"><h3>@img.Title</h3></a>
                                         </div>
                                     </div>
                                 }
@@ -146,7 +146,7 @@ else
                                     <div class="col-sm-6">
                                         <a href="@img.NavigateTo"><img class="img-responsive" src="@img.PictureUrl" alt="" /></a>
                                         <div class="">
-                                            <a href="@img.NavigateTo"><h3>@img.Title</h3></a>
+                                            <a class="sav-semi" href="@img.NavigateTo"><h3>@img.Title</h3></a>
                                         </div>
                                     </div>
                                 }
@@ -360,8 +360,7 @@ else
                                             window.location = url;
                                         return false;
                                     });
-
-
+                                    
                                     $(function () {
                                         if (window.matchMedia("(max-width: 768px)").matches) {
                                             if (navigator.userAgent.indexOf('Safari') != -1 || navigator.userAgent.indexOf('Chrome') == -1) {

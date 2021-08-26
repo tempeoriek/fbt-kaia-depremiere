@@ -82,7 +82,11 @@ var defCol = "col-sm-4";
                 <span class="badge pull-right">New</span>
             }*@
 
-            <h3 style="text-transform: uppercase;"><a href="@Url.RouteUrl("Product", new { SeName = Model.SeName})">@Html.DisplayFor(m => m.Name) @Model.ShortDescription</a></h3>
+            <h3 style="text-transform: uppercase;">
+                <a class="sav-semi text-product-name" href="@Url.RouteUrl("Product", new { SeName = Model.SeName})">
+                    @Html.DisplayFor(m => m.Name)
+                </a>
+            </h3>
 
             @*<span class="kleur">
                 @Model.ShortDescription
@@ -104,9 +108,9 @@ var defCol = "col-sm-4";
 
                         if (!String.IsNullOrEmpty(Model.ProductPrice.OldPrice))
                         {
-                            <span class="price old-price">@Model.ProductPrice.OldPrice</span>
+                            <span class="price old-price text-product-name">@Model.ProductPrice.OldPrice</span>
                         }
-                        <span class="price actual-price">@prijs</span>
+                        <span class="price actual-price text-product-name">@prijs</span>
 
                         @*@if (Model.ProductPrice.DisplayTaxShippingInfo)
                         {
@@ -120,14 +124,14 @@ var defCol = "col-sm-4";
                     }
                     else
                     {
-                        <span class="price actual-price">@prijs</span>
+                        <span class="price actual-price text-product-name">@prijs</span>
                     }
                 </div>
 
             }
             else
             { <div class="prices">
-                    <span class="out-of-stock">
+                    <span class="out-of-stock text-product-name">
                         Out of stock
                     </span>
                 </div>
