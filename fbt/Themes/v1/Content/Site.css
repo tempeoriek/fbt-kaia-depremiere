@@ -21,6 +21,11 @@
 @font-face { 
     font-family: 'sav-semi'; 
     src:
+        url('../../../fonts/SuisseIntl-Regular/SuisseIntl-SemiBold.woff2') format('woff2'),
+        url('../../../fonts/SuisseIntl-Regular/SuisseIntl-SemiBold.woff') format('woff'),
+        url('../../../fonts/SuisseIntl-Regular/SuisseIntl-SemiBold.eot?#iefix') format('embedded-opentype'), 
+        url('../../../fonts/SuisseIntl-Regular/SuisseIntl-SemiBold.otf') format('opentype'), 
+        url('../../../fonts/SuisseIntl-Regular/SuisseIntl-SemiBold.ttf') format('truetype'),
         url('../../../fonts/SuisseIntl-Regular/SuisseIntl-SemiBold.otf') format('opentype');
     font-style:normal; 
     font-display:swap;
@@ -149,10 +154,8 @@ hr {
     padding-left:25px;
     padding-right:25px;
 }
+.sav-semi {font-family: sav-semi;}
 
-.sav-semi {
-    font-family: sav-semi;
-}
 input::-moz-placeholder {
     opacity: 0 !important ;
  }
@@ -740,11 +743,11 @@ li.tab-menu  > a:active { text-decoration:none; color:#383838; border-bottom:1px
     -webkit-box-sizing: content-box;
     box-sizing: content-box;
     overflow: hidden;
-    padding: 0 5px 0;
+    padding: 0 0 0;
     right: 3px;
     position: absolute;
     z-index: 4;
-    width:310px;
+    width:309px;
     visibility: hidden;
     font-size:0.90rem;
 }
