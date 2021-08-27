@@ -743,11 +743,11 @@ li.tab-menu  > a:active { text-decoration:none; color:#383838; border-bottom:1px
     -webkit-box-sizing: content-box;
     box-sizing: content-box;
     overflow: hidden;
-    padding: 0 0 0;
+    padding: 0 5px 0;
     right: 3px;
     position: absolute;
     z-index: 4;
-    width:309px;
+    width:315px;
     visibility: hidden;
     font-size:0.90rem;
 }
