@@ -138,6 +138,20 @@ else
         if (item.MobileItems.Any())
         {
                         <div class="container-fluid homepagev2 grid hidden-md hidden-lg">
+
+                            @foreach (var img in item.MobileItems)
+                            {
+                                <div>
+                                    <a href="@img.NavigateTo">
+                                        <img style="width: 100%;" src="@img.PictureUrl" alt="" />
+                                    </a>
+                                    <a href="@img.NavigateTo">
+                                        @Html.Raw(img.Title)
+                                    </a>
+                                </div>
+                            }
+                        </div>
+                        @* <div class="container-fluid homepagev2 grid hidden-md hidden-lg">
                             <div class="row">
 
 
@@ -151,7 +165,7 @@ else
                                     </div>
                                 }
                             </div>
-                        </div>
+                        </div> *@
         }
 
 

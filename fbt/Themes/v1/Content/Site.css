@@ -1158,7 +1158,7 @@ li.list-group-item > a{
 
 .catalog-line{ /*padding:7px;*/}
 .product-item{ margin-bottom:40px;}
-.product-item  h3{margin-top:18px; }
+.product-item  h3{margin-top: 6px; }
 .product-item .img-thumbnail{
     border: none;
     border-radius: 0;
@@ -2710,7 +2710,7 @@ figure.effect-sadie:hover p {
         cursor: pointer;
         font-size:12px;
         padding:0 0 0 3px;
-        border-bottom:1px solid black;
+        border-bottom: 2px solid black;
     }
 
     
