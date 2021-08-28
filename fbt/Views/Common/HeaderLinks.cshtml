@@ -38,6 +38,14 @@
 
     }
 
+    string height_acc = "";
+    if (Model.IsAuthenticated)
+    {
+        height_acc = "137px";
+    } else {
+        height_acc = "150px";
+    }
+
 
    
 
@@ -120,7 +128,7 @@
                                 </ul>
                             </div>
 
-                            <div role="tabpanel" id="myaccount" class="tab-pane" style="height:137px">
+                            <div role="tabpanel" id="myaccount" class="tab-pane" style="height: @height_acc">
 
                                 <ul class="list-unstyled">
 
